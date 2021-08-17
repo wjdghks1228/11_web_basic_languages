@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name과 자바스크립트</title>
+</head>
+<body>
+	<input type="checkbox" name="webLanguages" value="html"> html
+	<input type="checkbox" name="webLanguages" value="css"> css
+	<input type="checkbox" name="webLanguages" value="javascript"> javascript
+	<input type="button" onclick="process1()" value="버튼"><br><br>
+	
+	<!-- name을 주로 사용하는 태그 radio -->
+	<input type="radio" name="browser" value="chrome" checked> chrome
+	<input type="radio" name="browser" value="fireFox" > fireFox
+	<input type="radio" name="browser" value="exploreEdge"> explore dege
+	<input type="button" onclick="process2()" value="버튼">
+	
+	
+	<Script>
+	/*
+    
+    # getElementsByName("name");
+    
+    - HTML문서에 name 일치한 값을 선택한다.
+    - 데이터가 컬렉션 형태로 저장된다.
+    - 내용 , 스타일 , 속성 모두에 변화를 줄 수 있다.
+
+	 */
+		//checkBox type
+		function process1(){
+    		
+    		
+    	
+			var webLanguages = document.getElementsByName("webLanguages");
+
+
+			
+			//예시 1) 배열의 크기확인
+			console.log("length : " + webLanguages.length);
+			console.log("===================================");
+			//예시 2) value 값 얻어오기 
+			for (var i = 0; i < webLanguages.length; i++) {
+				console.log("data : " + webLanguages[i].value);
+			}
+			console.log("====================================");
+			//예시 3) check된 data 확인하기 
+			for (var i = 0; i < webLanguages.length; i++) {
+				if(webLanguages[i].checked == true){
+					console.log("[check] : " + webLanguages[i].value);	
+				}
+			}
+			console.log("=========================================");
+			//예시 4) 특별한 checkbox를 체크해보기 
+			webLanguages[0].checked = true;
+			webLanguages[1].checked = true;
+			webLanguages[2].checked = true;
+			for (var i = 0; i < webLanguages.length; i++) {
+				if(webLanguages[i].checked == true){
+					console.log("[전체체크] : " + webLanguages[i].value);
+				}
+			}
+			//예시 5) disabled 속성 적용해보기
+			webLanguages[0].disabled = true;
+			webLanguages[1].disabled = true;
+			webLanguages[2].disabled = true;
+		}
+		
+		//Radio type
+		function process2(){
+			//예시1) 배열의 크기확인
+			var browsers = document.getElementsByName("browser");
+			console.log("배열의 길이는 : " + browsers.length);
+			console.log("=======================================");
+			//예시2) value 값 얻어오기
+			for(var i = 0 ; i < browsers.length; i++){
+				console.log("배열 값 : " + browsers[i].value);
+			}
+			console.log("=======================================");
+			//예시3) check된 data 확인하기
+			for(var i  = 0 ; i < browsers.length; i++){
+				if(browsers[i].checked == true){
+					console.log("[checked]" + browsers[i].value);
+				}
+			}
+			console.log("=======================================");
+			//예시4) 특별한 checkbox를 체크해보기
+			console.log("ex4");
+			browsers[0].checked = true;
+			browsers[1].checked = true;
+			browsers[2].checked = true;
+			//예시5) disabled 속성 적용해보기
+			console.log("ex5");
+			for(var i = 0 ; i < browsers.length; i++){
+				if(browsers[i].checked == true){
+					browsers[i].disabled = true;
+				}
+			}
+		}
+	</Script>
+</body>
+</html>

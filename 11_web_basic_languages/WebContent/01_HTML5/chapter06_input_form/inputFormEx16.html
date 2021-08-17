@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>회원 가입 화면</legend>
+			<p><label for=name></label>이름   : <input type="text" name="name" id="name"></p>
+			<p><label for=id></label>아이디   : <input type="text" name="id" id="id">
+				(아이디는 12자 이내로 입력하세요 <input type="button" value="아이디중복확인">)			
+			</p>
+			<p><label for=pw></label>비밀번호 : <input type="text" name="pw" id="pw"></p>
+			<p>
+				<input type="radio" name="gender" value="male">남
+				<input type="radio" name="gender" value="female">여				
+			</p>
+			<p>
+				<label for="area">사는 지역 :</label>
+					<select id="area" name="area">
+						<option value="서울특별시" selected>서울특별시</option>
+						<option value="강원도" >강원도</option>
+						<option value="충청도" >충청도</option>
+						<option value="전라도" >전라도</option>
+						<option value="경상남도" >경상남도</option>
+						<option value="경상북도" >경상북도</option>
+						<option value="제주도" >제주도</option>
+					</select>
+			</p>
+			<p>
+				<label for="email">이메일주소</label>
+					<input type="text" name="browser" id="broswer">@
+					<input type="text" name="site" id="site">(이메일 수신허용 
+					<input type="radio" name="email" checked>허용
+					<input type="radio" name="email" >거부)
+			</p>
+			<p>
+			<label for="job">직업
+				<select id="job" name="job">
+					<option value="학생">학생</option>
+					<option value="주부">주부</option>
+					<option value="백수">백수</option>
+				</select>
+			</label>
+			</p>
+			<p>
+				<label for="introduce">자기소개<br>
+					<textarea id="introduce" name="introduce" rows="5" cols="50"></textarea>
+				</label>
+			
+			</p>
+			<p>
+				<input type="submit" value="제출">
+				<input type="reset" value="취소">
+			</p>
+		</fieldset>
+	</form>
+	
+</body>
+</html>

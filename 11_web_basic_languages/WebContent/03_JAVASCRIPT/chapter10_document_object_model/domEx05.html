@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS요소 및 img수정</title>
+</head>
+<body id="target" style="background-color : white">
+	<image id="image" src="../images/pome.png" width="120" height="100" alt="몽실이" ><br>
+	<input type="button" onclick="changeImage()" value="다른사진보기">
+	<hr>
+
+	<input type="radio" name="C1" onclick="changeColor('lightblue')">파랑색
+	<input type="radio" name="C1" onclick="changeColor('lightgreen')">초록색
+	<hr>
+	
+	<button onclick="changeColors()">배경색상 변경</button>
+	<input type="button" onclick="changeColors2()" value="배경색상변경2">
+	<hr>
+	<br><br>
+	
+	
+	<div>
+		<img src="../images/pic_1.jpg" width="200" height="200" id="photo" alt="로고">
+		<p>
+			<button onclick="changeImages(0)">이전</button>
+			<button onclick="changeImages(1)">다음</button>
+			
+		</p>
+	</div>
+
+
+<script>
+	function changeImage(){
+		document.getElementById("image").src = "../images/poodle.png";		
+	}
+	function changeColor(color){
+		document.getElementById("target").style.backgroundColor = color;
+	}
+	
+	var color = ["red", "LightPink", "Navy", "aqua", "gray", "orange", "green" ];
+	var idx = 0;
+	
+	function changeColors(){
+		document.getElementById("target").style.backgroundColor = color[idx];
+		idx++;
+		if(idx == color.length){
+			idx = 0;
+		}
+	}
+	function changeColors2(){
+		document.getElementById("target").style.backgroundColor = color[idx];
+		idx++;
+		if(idx == color.length){
+			idx =0;
+		}
+	}
+	var imgNum = 1;
+	
+	function changeImages(direct){
+		if(direct == 1) {
+			if(imgNum == 9) return;
+			imgNum++;
+		}
+		else{
+			if(imgNum == 1) return;
+			imgNum--;
+		}
+		document.getElementById("photo").src="../images/pic_"+imgNum+".jpg";
+	}
+	
+</script>
+
+</body>
+
+</html>

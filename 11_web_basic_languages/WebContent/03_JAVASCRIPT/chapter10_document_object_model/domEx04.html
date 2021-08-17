@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tag와 자바스크립트</title>
+</head>
+<body>
+
+	<ol>
+		<li>ol item 1</li>
+		<li>ol item 2</li>
+		<li>ol item 3</li>
+		<li>ol item 4</li>
+		<li>ol item 5</li>
+	</ol>
+
+	
+	<input type="button" value="버튼" onclick="process1()">
+
+	<ul>
+		<li>ul item1</li>
+		<li>ul item2</li>
+		<li>ul item3</li>
+		<li>ul item4</li>
+		<li>ul item5</li>
+	</ul>	
+	<ul>
+		<li>ul item6</li>
+		<li>ul item7</li>
+		<li>ul item8</li>
+		<li>ul item9</li>
+		<li>ul item10
+		</li>
+	</ul>	
+	<input type="button" value="버튼" onclick="process2()">
+	
+	<script>
+
+		
+		function process1(){
+			var ol = document.getElementsByTagName("ol");
+			console.log(ol);
+			console.log(ol[0]);
+			console.log("=========================");
+			console.log(ol[0].getElementsByTagName("li")); //li의 컬렉션 접근
+			console.log("===============================");
+			console.log(ol[0].getElementsByTagName("li").length);
+			
+			console.log("===============================");
+			console.log("li의 text접근");
+			var li = ol[0].getElementsByTagName("li");
+			for (var i = 0; i < li.length; i++) {
+				console.log(li[i].innerHTML);
+			}
+			
+			for (var i = 0; i < li.length; i++) {
+				li[i].innerHTML = "수정된데이터" + (i+1);
+			}
+		}
+		
+		function process2(){
+			var ul = document.getElementsByTagName("ul");
+			console.log(ul);
+			console.log(ul[0]);
+			console.log(ul[1]);
+			
+			for (var i = 0; i < ul.length; i++) {
+				var li = ul[i].getElementsByTagName("li");
+				for (var j = 0; j < li.length; j++) {
+					console.log(li[j].innerHTML);
+					
+				}
+			}
+		}
+	</script>
+</body>
+</html>

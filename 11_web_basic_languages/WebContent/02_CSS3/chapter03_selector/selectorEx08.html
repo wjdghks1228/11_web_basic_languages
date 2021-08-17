@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상클래스</title>
+<style>
+	/*사용 예시1*/
+	li:first-child{color:red;}
+	li:nth-child(2){color:blue}
+	li:nth-child(3){color:green}
+	li:nth-child(4){color:pink}
+	li:last-child{color:purple}
+	
+	/*사용 예시2*/
+	a:link{color:green;} /*방문되지 않은 링크의 스타일*/
+	a:visited{color:red;}/*방문된 링크의 스타일*/
+	a:hover{color:blue;}/*마우스가 위에 있을 때의 스타일*/
+	a:active{color:yellow;}/*마우스로 클릭되는 순간의 스타일*/
+	
+</style>
+</head>
+<body>
+	<ul>
+		<li>a</li>
+		
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+		<li>e</li>
+	</ul>
+	<a href="http://www.naver.com>" type=_blank>마우스를 올려보세요</a>
+</body>
+</html>
